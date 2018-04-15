@@ -1,0 +1,381 @@
+.flashing {
+  background: rgb(150, 255, 245);
+  padding: 1px 1px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+
+  animation-name: flashing;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  /* Firefox 1+ */
+  -webkit-animation-name: flashing;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+
+  /* Safari 3-4 */
+  -moz-animation-name: flashing;
+  -moz-animation-duration: 1.5s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+}
+
+@keyframes flashing {
+  0% {
+    opacity: 0.99;
+  }
+  50% {
+    opacity: 0.66;
+  }
+  100% {
+    opacity: 0.33;
+  }
+}
+
+/* Firefox 1+ */
+@-webkit-keyframes flashing {
+  0% {
+    opacity: 0.99;
+  }
+  50% {
+    opacity: 0.66;
+  }
+  100% {
+    opacity: 0.33;
+  }
+}
+
+/* Safari 3-4 */
+@-moz-keyframes flashing {
+  0% {
+    opacity: 0.99;
+  }
+  50% {
+    opacity: 0.66;
+  }
+  100% {
+    opacity: 0.33;
+  }
+}
+
+.flashing2 {
+  background: rgb(100, 255, 235);
+  padding: 1px 1px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+
+  animation-name: flashing2;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  /* Firefox 1+ */
+  -webkit-animation-name: flashing2;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+
+  /* Safari 3-4 */
+  -moz-animation-name: flashing2;
+  -moz-animation-duration: 1.5s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+}
+
+@keyframes flashing2 {
+  0% {
+    opacity: 0.66;
+  }
+  50% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.33;
+  }
+}
+
+/* Firefox 1+ */
+@-webkit-keyframes flashing2 {
+  0% {
+    opacity: 0.66;
+  }
+  50% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.33;
+  }
+}
+
+/* Safari 3-4 */
+@-moz-keyframes flashing2 {
+  0% {
+    opacity: 0.66;
+  }
+  50% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.33;
+  }
+}
+
+.flashing3 {
+  background: rgb(30, 255, 225);
+  padding: 1px 1px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+
+  animation-name: flashing3;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  /* Firefox 1+ */
+  -webkit-animation-name: flashing3;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+
+  /* Safari 3-4 */
+  -moz-animation-name: flashing3;
+  -moz-animation-duration: 1.5s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+}
+
+@keyframes flashing3 {
+  0% {
+    opacity: 0.33;
+  }
+  50% {
+    opacity: 0.66;
+  }
+  100% {
+    opacity: 0.99;
+  }
+}
+
+/* Firefox 1+ */
+@-webkit-keyframes flashing3 {
+  0% {
+    opacity: 0.33;
+  }
+  50% {
+    opacity: 0.66;
+  }
+  100% {
+    opacity: 0.99;
+  }
+}
+
+/* Safari 3-4 */
+@-moz-keyframes flashing3 {
+  0% {
+    opacity: 0.33;
+  }
+  50% {
+    opacity: 0.66;
+  }
+  100% {
+    opacity: 0.99;
+  }
+}
+
+/* 
+_______________________________________________________
+*/
+
+.flashing4 {
+  background: rgb(245, 180, 255);
+  padding: 1px 1px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+
+  animation-name: flashing4;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  /* Firefox 1+ */
+  -webkit-animation-name: flashing4;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+
+  /* Safari 3-4 */
+  -moz-animation-name: flashing4;
+  -moz-animation-duration: 1.5s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+}
+
+@keyframes flashing4 {
+  0% {
+    opacity: 0.99;
+  }
+  50% {
+    opacity: 0.66;
+  }
+  100% {
+    opacity: 0.33;
+  }
+}
+
+/* Firefox 1+ */
+@-webkit-keyframes flashing4 {
+  0% {
+    opacity: 0.99;
+  }
+  50% {
+    opacity: 0.66;
+  }
+  100% {
+    opacity: 0.33;
+  }
+}
+
+/* Safari 3-4 */
+@-moz-keyframes flashing4 {
+  0% {
+    opacity: 0.99;
+  }
+  50% {
+    opacity: 0.66;
+  }
+  100% {
+    opacity: 0.33;
+  }
+}
+
+.flashing5 {
+  background: rgb(245, 150, 255);
+  padding: 1px 1px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+
+  animation-name: flashing5;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  /* Firefox 1+ */
+  -webkit-animation-name: flashing5;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+
+  /* Safari 3-4 */
+  -moz-animation-name: flashing5;
+  -moz-animation-duration: 1.5s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+}
+
+@keyframes flashing5 {
+  0% {
+    opacity: 0.66;
+  }
+  50% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.33;
+  }
+}
+
+/* Firefox 1+ */
+@-webkit-keyframes flashing5 {
+  0% {
+    opacity: 0.66;
+  }
+  50% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.33;
+  }
+}
+
+/* Safari 3-4 */
+@-moz-keyframes flashing5 {
+  0% {
+    opacity: 0.66;
+  }
+  50% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 0.33;
+  }
+}
+
+.flashing6 {
+  background: rgb(245, 120, 255);
+  padding: 1px 1px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+
+  animation-name: flashing6;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  /* Firefox 1+ */
+  -webkit-animation-name: flashing6;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+
+  /* Safari 3-4 */
+  -moz-animation-name: flashing6;
+  -moz-animation-duration: 1.5s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+}
+
+@keyframes flashing6 {
+  0% {
+    opacity: 0.33;
+  }
+  50% {
+    opacity: 0.66;
+  }
+  100% {
+    opacity: 0.99;
+  }
+}
+
+/* Firefox 1+ */
+@-webkit-keyframes flashing6 {
+  0% {
+    opacity: 0.33;
+  }
+  50% {
+    opacity: 0.66;
+  }
+  100% {
+    opacity: 0.99;
+  }
+}
+
+/* Safari 3-4 */
+@-moz-keyframes flashing6 {
+  0% {
+    opacity: 0.33;
+  }
+  50% {
+    opacity: 0.66;
+  }
+  100% {
+    opacity: 0.99;
+  }
+}

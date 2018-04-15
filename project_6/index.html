@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="css/tile_animation.css">
+  <link rel="stylesheet" href="css/map_control.css">
+  <link rel="stylesheet" href="css/app_style.css">
+  <title>The Kingdom Games</title>
+
+</head>
+
+<body class="grey lighten-2">
+  <!-- Navigation Bar -->
+  <div>
+    <nav class="nav-wrapper grey darken-3">
+      <div class="container">
+        <a class="brand-logo center">The Kingdom Games
+          <i class="material-icons">security</i>
+        </a>
+        <ul class="left" id="leftButton">
+          <li>
+            <a data-target="modal1" class="modal-trigger waves-effect waves-light btn light-blue darken-3  hoverable">Rules
+              <i class="material-icons right">help_outline</i>
+            </a>
+          </li>
+        </ul>
+        <ul class="right" id="rightButton">
+          <li>
+            <a href="index.html" class="waves-effect waves-light btn teal accent-4 hoverable">Restart
+              <i class="material-icons right">loop</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Fight Prompt -->
+  <div id="modal2" class="modal grey">
+    <div class="modal-content grey lighten-3">
+      <h2 class="center-align flow-text cyan-text accent-4">YOU HAVE BEEN CHALLENGED!</h2>
+      <p class="center-align flow-text">If you defend yourself, your shield will grant you a 50% damage in-take reduction -but you can't counter-attack.
+        <br/>Are you going to defend yourself or attack?</p>
+    </div>
+    <div class="modal-footer">
+      <div class="row">
+        <a id="defense" href="#!" class="modal-action modal-close btn amber darken-1 col s6 white-text hoverable" onClick="(function(){
+          turn.defend = true;
+          fight();
+          return false;
+      })();return false;">Defend</a>
+        <a id="attack" href="#!" class="btn modal-action modal-close red col s6 white-text pulse hoverable" onClick="(function(){
+          turn.defend = false;
+          fight();
+          return false;
+      })();return false;">Attack</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Game Prompt -->
+  <div id="lostGame" class="modal grey">
+    <div class="modal-content grey lighten-3">
+      <h2 class="center-align flow-text red-text">YOU HAVE BEEN DEFEATED!</h2>
+      <p class="center-align flow-text">You couldn't defend yourself, you lost the kingdom. Or wait!
+        <br/>Do you want to redeem yourself and request to rematch your opponent?</p>
+    </div>
+    <div class="modal-footer">
+      <div class="row">
+        <a href="index.html" class="modal-action modal-close btn amber darken-1 col s6 white-text hoverable">Rematch</a>
+        <a href="#!" class="btn modal-action modal-close red col s6 white-text pulse hoverable">Quit</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Player 1 Game Card  -->
+  <div class="card cyan accent-1 z-depth-5" id="floatLeft">
+    <div class="card-content center" id="#leftContent">
+      <span id="player1Heart" class="pulse btn-large btn-floating red">
+        <i class="material-icons large white-text">favorite</i>
+      </span>
+      <h5 class="white-text">Health</h5>
+      <h3 id="p1health" class="count white-text">100%</h3>
+      <div class="progress grey lighten-1">
+        <div id="p1healthBar" class="determinate red" style="width: 100%;">
+        </div>
+      </div>
+      <span class="btn-large btn-floating black">
+        <i class="material-icons large white-text">fitness_center</i>
+      </span>
+      <h5 class="white-text">Power</h5>
+      <h3 class="count white-text" id="p1power">10%</h3>
+    </div>
+  </div>
+  </div>
+
+  <!-- Player 2 Game Card  -->
+  <div class="card purple accent-1 z-depth-5" id="floatRight">
+    <div class="card-content center" id="#rightContent">
+      <span id="player2Heart" class="pulse btn-large btn-floating red">
+        <i class="material-icons large white-text">favorite</i>
+      </span>
+      <h5 class="white-text">Health</h5>
+      <h3 id="p2health" class="count white-text">100%</h3>
+      <div class="progress white">
+        <div id="p2healthBar" class="determinate red" style="width: 100%">
+        </div>
+      </div>
+      <span class="btn-large btn-floating black">
+        <i class="material-icons large white-text">fitness_center</i>
+      </span>
+      <h5 class="white-text">Power</h5>
+      <h3 class="count white-text" id="p2power">10%</h3>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- Game Map -->
+  <div class="container" id="gameContainer">
+    <div id="stage" class="card grey lighten-5 z-depth-4">
+    </div>
+  </div>
+
+  <!-- Game Instructions Modal -->
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+      <p class="flow-text blue-grey-text center-align">
+        <strong>Game Rules</strong>
+      </p>
+      <p class="flow-text">
+        <span class="center-align">The
+          <em>initial
+            <strong>turn and placement</strong>
+          </em> of each players is
+          <em>randomly selected</em> on the map when the game loads.
+          <br> For each turn, each player can move from
+          <em>
+            <strong>one to three boxes </strong> (horizontally or vertically)</em> before ending their turn.</span>
+        <br>
+        <br>
+        <span class="grey lighten-3"> On the map,
+          <span class="red-text"> 4 Weapons </span>,
+          <span class="blue-text"> 2 Potions </span>, and
+          <span class="brown-text darken-4"> 15 Obstacles </span> will be placed
+          <em>randomly placed.</em>
+        </span>
+        <br>
+        <span class="red white-text"> • Weapons</span>
+        <img src="images/dagger.png" alt="Dagger">
+        <strong>(20% Damage)</strong>
+        <img src="images/hammer.png" alt="Hammer">
+        <strong>(22% Damage)</strong>
+        <img src="images/quiver.png" alt="Quiver">
+        <strong>(24% Damage)</strong>
+        <img src="images/sword.png" alt="Sword">
+        <strong>(26% Damage)</strong>
+        <br>
+        <span class="blue darken-3 white-text"> • Potions</span>
+        <img src="images/potion1.png" alt="Potion">
+        <strong>(+30% Health)</strong>
+        <img src="images/potion2.png" alt="Potion">
+        <strong>(+30% Health)</strong>
+        <br>
+        <span class="brown darken-3 white-text"> • Obstacles</span>
+        <img src="images/blocked.png" alt="Blocked Tile"> X 15
+        <br>
+        <br>
+        <em>Players
+          <strong>cannot pass</strong> through the
+          <strong>obstacles</strong> generated or
+          <strong>above/beyond</strong> the other player.</em>
+        <br> The
+        <em>weapons</em> on the map
+        <em>
+          <strong> can be collected</strong>
+        </em> by the player who
+        <strong>lands</strong> on it. The player will
+        <em>leave their current weapon</em> on site and
+        <em>replace it</em> with the new one.
+        <br>
+        <br> When the game starts, the
+        <em>initial damage</em> that each player can inflict is
+        <em>10% points of damage.</em>
+        <br> If players
+        <em>land over adjacent squares</em> (horizontally or vertically),
+        <em> a battle
+          <strong>begins.</strong>
+        </em>
+        <br>
+        <br>
+        <strong> During combat, the game works as follows:</strong>
+        <br> • Each player
+        <em class="red-text lighten-1">attacks</em> in turn.
+        <br> • The
+        <em class="red-text darken-4">damage depends</em> on the player's
+        <em class="red-text darken-4">weapon.</em>
+        <br> • The challenged player(s) can
+        <em class="amber-text darken-3">choose to attack or defend</em> against the next shot.
+        <br> • If the challenged player(s)
+        <em class="blue-text darken-3">chooses to defend themselves</em>, they will
+        <em class="blue-text darken-3">sustain 50% less damage</em> than normal, but will
+        <em class="red-text darken-4">lose their turn.</em>
+        <br>
+        <span class="red darken-3 white-text"> • As soon as the life points of a player (initially 100) falls to 0,
+          <strong>they lose.</strong>
+        </span>
+        <br>
+        <span class="green darken-3 white-text"> • If a player
+          <em>is below 50%</em> they may use one of the healing potions and
+          <strong>
+            <em>regain +30% life points.</em>
+          </strong>
+        </span>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-action modal-close waves-effect waves-yellow light-blue btn-large">Close</button>
+    </div>
+  </div>
+
+
+  <!-- Footer Content -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">OpenClassrooms: Project 6</h5>
+          <p class="grey-text text-lighten-4">Build a turn-based board game in JavaScript.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Daniel Rodriguez
+            <i class="material-icons">code</i>
+          </h5>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <span>
+          © Created By Daniel Rodriguez 2018 </span>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/end_game.js"></script>
+  <script src="js/fight.js"></script>
+  <script src="js/objects.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/tile_animation.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/modal.js"></script>
+</body>
+
+</html>
