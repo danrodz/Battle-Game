@@ -7,6 +7,7 @@ function fight() {
       player2Health -= player1Power[0];
       player1Health -= player2Power[0];
     }
+    turn.fight = !turn.fight;
   } else {
     if (turn.defend) {
       player1Health -= player2Power[0] / 2;
@@ -14,6 +15,7 @@ function fight() {
       player1Health -= player2Power[0];
       player2Health -= player1Power[0];
     }
+    turn.fight = !turn.fight;
   }
 
   if (player1Health <= 0 || player2Health <= 0) {
