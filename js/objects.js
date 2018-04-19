@@ -150,7 +150,7 @@ function renderObjects() {
   ) {
     if (turn.fight === turn.control) {
       turn.fight = !turn.fight;
-      $('#modal2').modal('open');
+      $('#fight').modal('open');
     } else {
       render();
     }
